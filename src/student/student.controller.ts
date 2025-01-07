@@ -20,4 +20,9 @@ export class StudentController {
   async getStudent(@Param('id') id: number) {
     return this.studentService.getStudentById(id);
   }
+
+  @Put(':id')
+  async updateStudent(@Param('id') id: number, @Body() student: Partial<Student>) {
+    return this.studentService.updateStudent(id, student);
+  }
 }
