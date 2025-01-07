@@ -25,4 +25,9 @@ export class StudentController {
   async updateStudent(@Param('id') id: number, @Body() student: Partial<Student>) {
     return this.studentService.updateStudent(id, student);
   }
+
+  @Delete(':id')
+  async deleteStudent(@Param('id') id: number) {
+    return this.studentService.deleteStudent(id);
+  }
 }
