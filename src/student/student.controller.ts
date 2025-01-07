@@ -15,4 +15,9 @@ export class StudentController {
   async getStudents() {
     return this.studentService.getAllStudents();
   }
+
+  @Get(':id')
+  async getStudent(@Param('id') id: number) {
+    return this.studentService.getStudentById(id);
+  }
 }

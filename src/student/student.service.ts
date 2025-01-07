@@ -17,4 +17,8 @@ export class StudentService {
   async getAllStudents(): Promise<Student[]> {
     return this.studentRepository.find();
   }
+
+  async getStudentById(id: number): Promise<Student> {
+    return this.studentRepository.findOneBy({ id });
+  }
 }
