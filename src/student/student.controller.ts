@@ -10,4 +10,9 @@ export class StudentController {
   async createStudent(@Body() student: Student) {
     return this.studentService.createStudent(student);
   }
+
+  @Get()
+  async getStudents() {
+    return this.studentService.getAllStudents();
+  }
 }

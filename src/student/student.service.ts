@@ -13,4 +13,8 @@ export class StudentService {
   async createStudent(student: Student): Promise<Student> {
     return this.studentRepository.save(student);
   }
+
+  async getAllStudents(): Promise<Student[]> {
+    return this.studentRepository.find();
+  }
 }
